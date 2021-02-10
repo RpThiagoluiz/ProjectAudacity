@@ -2,6 +2,7 @@ export default {
   title: "defaultInit",
 
   colors: {
+    init: "#f6f6f680",
     primary: "#eebff5",
     secondary: "#9e81d0",
     tertiary: "#854576",

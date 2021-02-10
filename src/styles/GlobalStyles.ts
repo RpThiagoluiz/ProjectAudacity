@@ -10,13 +10,14 @@ export default createGlobalStyle`
 
 html,body, #root {
   height:100%;
+  font-size: 32px;
 }
 
 *,button,input{
   border:0;
   outline:0;
-  //font-family: 'Press Start 2P', cursive;
-  font-family: 'Roboto', sans-serif;
+  //font-family: 'Press Start 2P', cursive; -> Game Font in App
+  // font-family: 'Roboto', sans-serif; -> Normal Font in App
 
 }
 button{
