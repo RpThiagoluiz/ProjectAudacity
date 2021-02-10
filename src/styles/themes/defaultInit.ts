@@ -1,11 +1,11 @@
 export default {
-  title: "default",
+  title: "defaultInit",
 
   colors: {
-    Primary: "#eebff5",
-    Secondary: "#9e81d0",
-    Tertiary: "#854576",
-    Fourth: "#301221",
+    primary: "#eebff5",
+    secondary: "#9e81d0",
+    tertiary: "#854576",
+    fourth: "#301221",
 
     textColorWhite: "#f2f2f2",
     textColorGray: "#bfbfbf",
