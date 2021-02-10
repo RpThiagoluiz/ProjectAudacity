@@ -3,6 +3,7 @@ export default {
 
   colors: {
     init: "#f6f6f680",
+    aside: "#0f0f0f30",
     primary: "#fff6d3",
     secondary: "#f9a875",
     tertiary: "#eb6b6f",
