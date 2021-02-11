@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+//Components
+import ThemesBtn from "../themesBtn";
+
 //styles
 import { BurgerThemeChange } from "./styles";
 
@@ -18,6 +21,7 @@ const BurgerNavTheme = () => {
       <div />
       <div />
       <div />
+      <ThemesBtn menuIsOpen={toggleMenuIsOpened} />
     </BurgerThemeChange>
   );
 };

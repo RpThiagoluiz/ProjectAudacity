@@ -2,16 +2,16 @@ export default {
   title: "dark",
 
   colors: {
-    init: "#f6f6f680",
+    init: "#0f0f0f60",
     aside: "#0f0f0f30",
     primary: "#e6e6ff",
     secondary: "#bebee6",
     tertiary: "#50506e",
     fourth: "#1e1e3c",
 
-    textColorWhite: "#f2f2f2",
+    textColorWhite: "#0f0f0f",
     textColorGray: "#bfbfbf",
-    textColorBlack: "#0f0f0f",
+    textColorBlack: "#f2f2f2",
 
     msgSuccess: "#22bb33",
     msgWarning: "#ff980f",

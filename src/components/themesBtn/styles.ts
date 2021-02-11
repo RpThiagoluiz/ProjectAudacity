@@ -1,28 +1,53 @@
-import styled from "styled-components";
+import { ButtonHTMLAttributes } from "react";
+import styled, { keyframes } from "styled-components";
 
-export const StyledButtonsTheme = styled.section`
-  height: 100vh;
+interface IContainerProps {
+  menuIsOpen: boolean;
+}
 
+const animate = keyframes`
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    50%{
+        opacity: .3;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+`;
+
+type IButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export const StyledButtonsTheme = styled.section<IContainerProps>`
   position: absolute;
-  top: 0;
+  top: 5rem;
   left: 0;
 
-  display: flex;
+  display: ${({ menuIsOpen }) => (menuIsOpen ? "flex" : "none")};
   flex-direction: column;
   justify-content: center;
 
-  background: ${(props) => props.theme.colors.aside};
-
   text-align: left;
 
-  transition: transform 0.3s ease-in-out;
+  transform: ${({ menuIsOpen }) => (menuIsOpen ? "" : "translateX(-100%)")};
+  transition: all 0.5s ease-in-out;
+  animation: ${animate} 0.5s;
+
+  > small {
+    color: ${({ theme }) => theme.colors.textColorBlack};
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
 `;
 
-export const DefaultButton = styled.button`
+export const DefaultButton = styled.button<IButtonProps>`
   width: 180px;
   height: 90px;
 
-  margin: 3rem;
+  margin-bottom: 50px;
 
   background: -webkit-linear-gradient(
     108deg,
@@ -39,7 +64,7 @@ export const LightButton = styled.button`
   width: 180px;
   height: 90px;
 
-  margin: 3rem;
+  margin-bottom: 50px;
 
   background: -webkit-linear-gradient(
     108deg,
@@ -56,7 +81,7 @@ export const DarkButton = styled.button`
   width: 180px;
   height: 90px;
 
-  margin: 3rem;
+  margin-bottom: 50px;
 
   background: -webkit-linear-gradient(
     108deg,

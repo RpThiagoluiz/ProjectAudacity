@@ -25,15 +25,17 @@ export const BurgerThemeChange = styled.aside<IContainerProps>`
   > div {
     width: 2rem;
     height: 0.25rem;
-    background: ${(props) => props.theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.secondary};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.5s ease-in-out;
     position: relative;
     transform-origin: 1px;
 
     :first-child {
       transform: ${({ menuIsOpen }) =>
         menuIsOpen ? "rotate(45deg)" : "rotate(0)"};
+      background: ${({ menuIsOpen, theme }) =>
+        menuIsOpen ? theme.colors.fourth : theme.colors.secondary};
     }
 
     :nth-child(2) {
@@ -45,6 +47,8 @@ export const BurgerThemeChange = styled.aside<IContainerProps>`
     :nth-child(3) {
       transform: ${({ menuIsOpen }) =>
         menuIsOpen ? "rotate(-45deg)" : "rotate(0)"};
+      background: ${({ menuIsOpen, theme }) =>
+        menuIsOpen ? theme.colors.fourth : theme.colors.secondary};
     }
   }
 `;

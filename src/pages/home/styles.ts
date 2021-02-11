@@ -26,7 +26,7 @@ export const Container = styled.section`
   text-align: center;
   justify-content: center;
 
-  background: ${(props) => props.theme.colors.init};
+  background: ${({ theme }) => theme.colors.init};
 
   font-family: "Press Start 2P", cursive;
 
@@ -35,10 +35,10 @@ export const Container = styled.section`
   > h1 {
     background: -webkit-linear-gradient(
       108deg,
-      ${(props) => props.theme.colors.primary} 15%,
-      ${(props) => props.theme.colors.secondary} 34%,
-      ${(props) => props.theme.colors.tertiary} 50%,
-      ${(props) => props.theme.colors.fourth} 73%
+      ${({ theme }) => theme.colors.primary} 15%,
+      ${({ theme }) => theme.colors.secondary} 34%,
+      ${({ theme }) => theme.colors.tertiary} 50%,
+      ${({ theme }) => theme.colors.fourth} 73%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -50,10 +50,10 @@ export const Container = styled.section`
     text-decoration: line-through;
     background: -webkit-linear-gradient(
       108deg,
-      ${(props) => props.theme.colors.primary} 15%,
-      ${(props) => props.theme.colors.secondary} 34%,
-      ${(props) => props.theme.colors.tertiary} 50%,
-      ${(props) => props.theme.colors.fourth} 73%
+      ${({ theme }) => theme.colors.primary} 15%,
+      ${({ theme }) => theme.colors.secondary} 34%,
+      ${({ theme }) => theme.colors.tertiary} 50%,
+      ${({ theme }) => theme.colors.fourth} 73%
     );
     background-clip: text;
     -webkit-background-clip: text;
