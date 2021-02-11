@@ -1,3 +1,8 @@
+import { useState } from "react";
+
+//CustomHook
+import { useTheme } from "../../hooks/themeHook/themeProvider";
+
 //styles
 import {
   StyledButtonsTheme,
@@ -7,15 +12,32 @@ import {
 } from "./styles";
 
 const ThemesBtn = ({ menuIsOpen }: any) => {
-  //onClick -> ChangeTheme
+  const { toggleTheme, theme } = useTheme();
+
+  const [defaultTheme, setDefaultTheme] = useState();
+  const [lightTheme, setLightTheme] = useState();
+  const [darkTheme, setDarkTheme] = useState();
+
+  const handleChangeTheme = (e: Event) => {
+    e.preventDefault();
+    toggleTheme();
+  };
+
   return (
     <StyledButtonsTheme menuIsOpen={menuIsOpen}>
       <small>Choice your theme color</small>
-      <DefaultButton onClick={(e) => console.log("Default")}>
+      <DefaultButton
+        value={defaultTheme}
+        onClick={(e) => console.log(defaultTheme)}
+      >
         Default
       </DefaultButton>
-      <LightButton onClick={(e) => console.log("Light")}>Light</LightButton>
-      <DarkButton onClick={(e) => console.log("Dark")}>Dark</DarkButton>
+      <LightButton value={lightTheme} onClick={(e) => console.log("Light")}>
+        Light
+      </LightButton>
+      <DarkButton value={darkTheme} onClick={(e) => console.log("Dark")}>
+        Dark
+      </DarkButton>
     </StyledButtonsTheme>
   );
 };

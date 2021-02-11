@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 interface IThemeContext {
-  themeCheck(): void;
+  toggleTheme(): void;
   theme: ITheme;
 }
 

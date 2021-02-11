@@ -15,22 +15,40 @@ const ThemeProvider: React.FC = ({ children }) => {
     if (themeSaved) {
       return JSON.parse(themeSaved);
     } else {
-      return light;
+      return defaultInit;
     }
   });
 
-  const themeCheck = () => {
-    if (theme.title === "dark") {
-      setTheme(light);
-      localStorage.setItem("@minha-carteira:theme", JSON.stringify(light)); //@pra guardar o theme, s[o pra ficar bunitim e nao ser sobreescrita]
-    } else {
-      setTheme(dark);
-      localStorage.setItem("@minha-carteira:theme", JSON.stringify(dark));
+  const toggleTheme = () => {
+    switch (theme.title) {
+      case "dark":
+        setTheme(dark);
+        localStorage.setItem(
+          "@devthiago-bestgame-ever:theme",
+          JSON.stringify(dark)
+        );
+        break;
+      case "light":
+        setTheme(light);
+        localStorage.setItem(
+          "@devthiago-bestgame-ever:theme",
+          JSON.stringify(light)
+        );
+        break;
+      case "defaultInit":
+        setTheme(defaultInit);
+        localStorage.setItem(
+          "@devthiago-bestgame-ever:theme",
+          JSON.stringify(defaultInit)
+        );
+        break;
+      default:
+        break;
     }
   };
 
   return (
-    <ThemeContext.Provider value={{ themeCheck, theme }}>
+    <ThemeContext.Provider value={{ toggleTheme, theme }}>
       {children}
     </ThemeContext.Provider>
   );

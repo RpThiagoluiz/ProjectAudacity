@@ -57,6 +57,10 @@ export const DefaultButton = styled.button<IButtonProps>`
     #301221 73%
   );
 
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border-radius: 5px;
 `;
 
@@ -74,6 +78,10 @@ export const LightButton = styled.button`
     #7c3f58 73%
   );
 
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border-radius: 5px;
 `;
 
@@ -91,5 +99,9 @@ export const DarkButton = styled.button`
     #1e1e3c 73%
   );
 
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border-radius: 5px;
 `;
