@@ -10,18 +10,23 @@ interface ITheme {
 
   colors: {
     init: string;
+    aside: string;
     primary: string;
     secondary: string;
     tertiary: string;
     fourth: string;
 
-    textColorWhite: string;
-    textColorGray: string;
-    textColorBlack: string;
+    text: {
+      white: string;
+      gray: string;
+      black: string;
+    };
 
-    msgSuccess: string;
-    msgWarning: string;
-    msgFail: string;
+    msg: {
+      success: string;
+      warning: string;
+      fail: string;
+    };
   };
 }
 

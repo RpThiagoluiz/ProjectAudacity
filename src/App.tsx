@@ -6,13 +6,17 @@ import Routes from "./routes";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //Default -> Hook i`ll choice in future
-import defaultTh from "./styles/themes/defaultInit";
+import { useTheme } from "./hooks/themeHook/themeProvider";
+import dark from "./styles/themes/light";
 
-const App = () => (
-  <ThemeProvider theme={defaultTh}>
-    <GlobalStyles />
-    <Routes />
-  </ThemeProvider>
-);
+const App = () => {
+  const { theme } = useTheme();
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Routes />
+    </ThemeProvider>
+  );
+};
 
 export default App;

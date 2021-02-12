@@ -12,13 +12,16 @@ declare module "styled-components" {
       tertiary: string;
       fourth: string;
 
-      textColorWhite: string;
-      textColorGray: string;
-      textColorBlack: string;
-
-      msgSuccess: string;
-      msgWarning: string;
-      msgFail: string;
+      text: {
+        white: string;
+        gray: string;
+        black: string;
+      };
+      msg: {
+        success: string;
+        warning: string;
+        fail: string;
+      };
     };
   }
 }

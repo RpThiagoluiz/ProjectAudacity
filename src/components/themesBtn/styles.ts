@@ -5,25 +5,27 @@ interface IContainerProps {
   menuIsOpen: boolean;
 }
 
+type IButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
 const animate = keyframes`
     0% {
         transform: translateX(100px);
         opacity: 0;
     }
-    50%{
+    50% {
+        transform: translateX(100px);
         opacity: .3;
     }
+    
     100%{
         transform: translateX(0px);
         opacity: 1;
     }
 `;
 
-type IButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
-
 export const StyledButtonsTheme = styled.section<IContainerProps>`
   position: absolute;
-  top: 5rem;
+  top: 4rem;
   left: 0;
 
   display: ${({ menuIsOpen }) => (menuIsOpen ? "flex" : "none")};
@@ -37,7 +39,7 @@ export const StyledButtonsTheme = styled.section<IContainerProps>`
   animation: ${animate} 0.5s;
 
   > small {
-    color: ${({ theme }) => theme.colors.textColorBlack};
+    color: ${({ theme }) => theme.colors.text.black};
     font-size: 12px;
     margin-bottom: 25px;
   }

@@ -9,12 +9,16 @@ export default {
     tertiary: "#eb6b6f",
     fourth: "#7c3f58",
 
-    textColorWhite: "#f2f2f2",
-    textColorGray: "#bfbfbf",
-    textColorBlack: "#0f0f0f",
+    text: {
+      white: "#f2f2f2",
+      gray: "#bfbfbf",
+      black: "#0f0f0f",
+    },
 
-    msgSuccess: "#22bb33",
-    msgWarning: "#ff980f",
-    msgFail: "#c9302c",
+    msg: {
+      success: "#22bb33",
+      warning: "#ff980f",
+      fail: "#c9302c",
+    },
   },
 };

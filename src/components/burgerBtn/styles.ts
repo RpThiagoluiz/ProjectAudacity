@@ -27,28 +27,31 @@ export const BurgerThemeChange = styled.aside<IContainerProps>`
     height: 0.25rem;
     background: ${({ theme }) => theme.colors.secondary};
     border-radius: 10px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
     position: relative;
     transform-origin: 1px;
 
     :first-child {
       transform: ${({ menuIsOpen }) =>
         menuIsOpen ? "rotate(45deg)" : "rotate(0)"};
+
       background: ${({ menuIsOpen, theme }) =>
-        menuIsOpen ? theme.colors.fourth : theme.colors.secondary};
+        menuIsOpen ? theme.colors.fourth : theme.colors.tertiary};
     }
 
     :nth-child(2) {
       opacity: ${({ menuIsOpen }) => (menuIsOpen ? "0" : "1")};
       transform: ${({ menuIsOpen }) =>
         menuIsOpen ? "translateX(20px)" : "translateX(0)"};
+      background: ${({ menuIsOpen, theme }) =>
+        menuIsOpen ? theme.colors.fourth : theme.colors.tertiary};
     }
 
     :nth-child(3) {
       transform: ${({ menuIsOpen }) =>
         menuIsOpen ? "rotate(-45deg)" : "rotate(0)"};
       background: ${({ menuIsOpen, theme }) =>
-        menuIsOpen ? theme.colors.fourth : theme.colors.secondary};
+        menuIsOpen ? theme.colors.fourth : theme.colors.tertiary};
     }
   }
 `;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
 //CustomHook
 import { useTheme } from "../../hooks/themeHook/themeProvider";
@@ -13,29 +13,47 @@ import {
 
 const ThemesBtn = ({ menuIsOpen }: any) => {
   const { toggleTheme, theme } = useTheme();
+  const themeTitle = theme.title;
 
-  const [defaultTheme, setDefaultTheme] = useState();
-  const [lightTheme, setLightTheme] = useState();
-  const [darkTheme, setDarkTheme] = useState();
+  const defaultTheme = "defaultInit";
+  const lightTheme = "light";
+  const darkTheme = "dark";
 
-  const handleChangeTheme = (e: Event) => {
-    e.preventDefault();
+  useEffect(() => {}, [themeTitle]);
+
+  const handleClickTheme = (value: string) => {
     toggleTheme();
+    console.log(value);
   };
 
   return (
     <StyledButtonsTheme menuIsOpen={menuIsOpen}>
       <small>Choice your theme color</small>
+
       <DefaultButton
         value={defaultTheme}
-        onClick={(e) => console.log(defaultTheme)}
+        onClick={(e: React.MouseEvent<HTMLElement>) => (
+          e.preventDefault(), handleClickTheme(defaultTheme)
+        )}
       >
         Default
       </DefaultButton>
-      <LightButton value={lightTheme} onClick={(e) => console.log("Light")}>
+
+      <LightButton
+        value={lightTheme}
+        onClick={(e: React.MouseEvent<HTMLElement>) => (
+          e.preventDefault(), handleClickTheme(lightTheme)
+        )}
+      >
         Light
       </LightButton>
-      <DarkButton value={darkTheme} onClick={(e) => console.log("Dark")}>
+
+      <DarkButton
+        value={darkTheme}
+        onClick={(e: React.MouseEvent<HTMLElement>) => (
+          e.preventDefault(), handleClickTheme(darkTheme)
+        )}
+      >
         Dark
       </DarkButton>
     </StyledButtonsTheme>
